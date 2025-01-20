@@ -15,7 +15,13 @@ function crearTabla(int $n) : array {
 }
 
 function imprimirTabla(array $tabla) : void {
-   echo "<pre>". print_r($tabla, true) . "</pre>";
+    echo "<pre>". print_r($tabla, true) . "</pre>";
+}
+
+function imprimirPrimos(array $primos) : void {    
+    foreach ($primos as $primo) {
+        echo $primo . "<br>";
+    }
 }
 
 //Elimina los multiplos del primer num del array
@@ -34,7 +40,10 @@ $n = 226;
 $tabla = crearTabla($n);
 $tablaTachada = tachaMultiplos($n, $tabla);
 
-echo "Números primos hasta $n";
+echo "Números primos hasta $n con pre:";
 imprimirTabla($tablaTachada);
+
+echo "<p>Números primos hasta $n con foreach:</p>";
+imprimirPrimos($tablaTachada);
 
 ?>
